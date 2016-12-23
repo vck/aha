@@ -1,0 +1,8 @@
+[program:kedaidesa-shortener]
+command = /home/deploy/.virtualenvs/flaskdeploy/bin/gunicorn flaskdeploy:app -w 4
+directory = /home/deploy/sites/flaskdeploy
+user = deploy
+stdout_logfile = /home/deploy/sites/flaskdeploy/logs/gunicorn/gunicorn_stdout.log
+stderr_logfile = /home/deploy/sites/flaskdeploy/logs/gunicorn/gunicorn_stderr.log
+redirect_stderr = True
+environment = PRODUCTION=1
